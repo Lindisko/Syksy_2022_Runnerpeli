@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.407843, 0.52549, 0.0784314, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 25, 1, 50 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.466667, 0.305882, 0.168627, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 8, 1.2, 50 )
+
+[node name="RoadBase" type="Spatial"]
+
+[node name="Grass" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25 )
+mesh = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Grass"]
+mesh = SubResource( 4 )
